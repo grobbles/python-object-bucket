@@ -2,7 +2,7 @@
 
 ############################################################################################################
 ## Constant Block
-PACKAGE_NAME="PythonPackageTemplate"
+PACKAGE_NAME="ObjectBucket"
 
 ############################################################################################################
 ## Description Function Block
@@ -24,8 +24,6 @@ Arguments:
 
     -rT | --runTests    : run the uint tests
 
-    -rP | --runProject  : run main function from project 
-
 EOF
 }
 
@@ -36,11 +34,7 @@ function build() {
 }
 
 function runTests() {
-    pytest Test${PACKAGE_NAME}
-}
-
-function runProject() {
-    python3 -m ${PACKAGE_NAME}.Main
+    python3 -m pytest ${PACKAGE_NAME}Tests
 }
 
 function install() {
@@ -90,12 +84,6 @@ case "$1" in
     -u | --uninstall)
         echo "uninstall the project"
         uninstall
-        exit $?
-        ;;
-
-    -rP | --runProject)
-        echo "run project"
-        runProject
         exit $?
         ;;
 

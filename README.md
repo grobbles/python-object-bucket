@@ -1,6 +1,12 @@
 # python-package-template
 
-A simple and small python package template with unit test
+This is a small python lib with a opject bucket. You can add a object and with a key name and a key class. With the key class 
+
+``` python
+    bucket.add("Fuu", Fuu, Fuu())
+
+    bucket.get("Fuu", Fuu).blubb()
+```
 
 ## Project structur
 
